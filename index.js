@@ -10,7 +10,7 @@ mainFunction();
 
 
 
-const mainFunction = async() => {
+async function mainFunction(){
 
     try {
         const GITHUB_TOKEN = core.getInput('github_token');
