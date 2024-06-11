@@ -21,13 +21,10 @@ async function mainFunction(){
         const owner = splitRepoName[0];
         const repo = splitRepoName[1];
 
-        console.log(GITHUB_TOKEN);
         const pull_request_list = await getPRList(GITHUB_TOKEN, owner, repo);
-        await getPRNumber(pull_request_list, BRANCH_NAME);
-        core.setOutput('pr_number', '007');
-        core.setOutput('pr_exists', false);
-      
-      
+        const prInfo = await getPRURL(pull_request_list, BRANCH_NAME);
+        core.setOutput('pr_url', prInfo.prURL);
+        core.setOutput('pr_exists', prInfo.prExists);
       
       
       } catch (error) {
@@ -51,16 +48,17 @@ async function getPRList (GITHUB_TOKEN, owner, repo){
     })   
 }
 
-async function getPRNumber(pull_request_list, branch_name) {
+async function getPRURL(pull_request_list, branch_name) {
     const prData = pull_request_list.data;
     let prExists = false;
-    let prNumber = '';
+    let prURL = '';
     if (prData.size != 0)
         prData.forEach(pr => {
             if(pr.head.ref == branch_name){
                 console.log(pr);
-
+                prExists = true;
+                prURL = pr.url
             }
         })
-    return {prExists, prNumber};
+    return {prExists, prURL};
 }

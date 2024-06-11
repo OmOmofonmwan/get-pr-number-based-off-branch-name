@@ -14,8 +14,8 @@ inputs:
     required: true
   
 outputs:
-  pr_number:
-    description: "Pull Request Number"
+  pr_url:
+    description: "Pull Request URL"
   pr_exists:
     description: "Checks whether PR exists"
 
