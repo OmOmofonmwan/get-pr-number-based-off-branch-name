@@ -1,0 +1,24 @@
+name: "Get PR Number"
+description: "Get The PR Number Based On Branch Name"
+author: "Omoruyi Omofonmwan"
+
+inputs:
+  github_token:
+    description: "GitHub Token"
+    required: true
+  repository:
+    description: "GitHub Repo"
+    required: true
+  branch_name:
+    description: "GitHub Branch Name"
+    required: true
+  
+outputs:
+  pr_number:
+    description: "Pull Request Number"
+  pr_exists:
+    description: "Checks whether PR exists"
+
+runs:
+  using: 'node16'
+  main: index.js
