@@ -1,7 +1,9 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const { Octokit } = require('@octokit/core');
 //import { Octokit } from 'octokit'
-const {Octokit} = require('@octokit/core');
+
+
 
 mainFunction();
 
@@ -49,4 +51,5 @@ const getPRList = async (GITHUB_TOKEN, FULL_REPO_NAME) => {
             'X-GitHub-Api-Version': '2022-11-28'
         }
     })
+   
 }
