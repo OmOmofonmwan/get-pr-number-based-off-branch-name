@@ -35,7 +35,7 @@ async function mainFunction(){
 }
 
 
-const getPRList = async (GITHUB_TOKEN, FULL_REPO_NAME) => {
+async function getPRList (GITHUB_TOKEN, FULL_REPO_NAME){
     const octokit = new Octokit ({
         auth: GITHUB_TOKEN
     })
