@@ -21,7 +21,9 @@ async function mainFunction(){
         const owner = splitRepoName[0];
         const repo = splitRepoName[1];
 
+        console.log(GITHUB_TOKEN);
         const pull_request_list = await getPRList(GITHUB_TOKEN, owner, repo);
+        await getPRNumber(pull_request_list, BRANCH_NAME);
         core.setOutput('pr_number', '007');
         core.setOutput('pr_exists', false);
       
