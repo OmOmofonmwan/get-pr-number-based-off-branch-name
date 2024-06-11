@@ -58,7 +58,7 @@ async function getPRNumber(pull_request_list, branch_name) {
     if (prData.size != 0)
         prData.forEach(pr => {
             if(pr.head.ref == branch_name){
-                console.log(pr.head);
+                console.log(pr);
 
             }
         })
