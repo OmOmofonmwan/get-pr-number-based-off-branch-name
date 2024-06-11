@@ -13,5 +13,6 @@
     "@actions/github": "^6.0.0",
     "@octokit/core": "^6.1.2",
     "octokit": "^4.0.2"
-  }
+  },
+  "type": "module"
 }
