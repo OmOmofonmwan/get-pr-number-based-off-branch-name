@@ -2,7 +2,6 @@
 //const github = require('@actions/github');
 //const { Octokit } = require('@octokit/core');
 import core from '@actions/core';
-import github from '@actions/github';
 import { Octokit } from '@octokit/core';
 
 
