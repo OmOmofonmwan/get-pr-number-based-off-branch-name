@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-import { Octokit } from 'octokit'
+//import { Octokit } from 'octokit'
+const {Octokit} = require('@octokit/core');
 
 mainFunction();
 
