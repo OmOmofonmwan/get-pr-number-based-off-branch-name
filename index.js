@@ -54,6 +54,6 @@ async function getPRList (GITHUB_TOKEN, owner, repo){
 async function getPRNumber(pull_request_list, branch_name) {
     const prData = pull_request_list.data;
     prData.forEach(pr => {
-        console.log(pr.head);
+        console.log(pr.head.ref);
     })
 }
