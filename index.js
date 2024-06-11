@@ -18,6 +18,8 @@ const mainFunction = async() => {
         console.log(FULL_REPO_NAME);
         console.log(BRANCH_NAME);
         console.log(pull_request_list);
+        core.setOutput('pr_number', '007');
+        core.setOutput('pr_exists', false);
       
       
       
