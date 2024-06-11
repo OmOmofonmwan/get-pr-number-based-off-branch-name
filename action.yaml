@@ -20,5 +20,5 @@ outputs:
     description: "Checks whether PR exists"
 
 runs:
-  using: 'node16'
+  using: 'node20'
   main: index.js
