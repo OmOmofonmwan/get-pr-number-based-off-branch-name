@@ -53,7 +53,14 @@ async function getPRList (GITHUB_TOKEN, owner, repo){
 
 async function getPRNumber(pull_request_list, branch_name) {
     const prData = pull_request_list.data;
-    prData.forEach(pr => {
-        console.log(pr.head.ref);
-    })
+    let prExists = false;
+    let prNumber = '';
+    if (prData.size != 0)
+        prData.forEach(pr => {
+            if(pr.head.ref == branch_name){
+                console.log(pr.head);
+
+            }
+        })
+    return {prExists, prNumber};
 }
