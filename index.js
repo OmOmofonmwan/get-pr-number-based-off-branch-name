@@ -55,6 +55,7 @@ async function getPRURL(pull_request_list, branch_name) {
     let prExists = false;
     let prURL = '';
     let prNumber = ''
+    let prHTMLURL = ''
     if (prData.size != 0)
         prData.forEach(pr => {
             if(pr.head.ref == branch_name){
@@ -62,7 +63,7 @@ async function getPRURL(pull_request_list, branch_name) {
                 prExists = true;
                 prURL = pr.url
                 prNumber = pr.number;
-                prHTMLURL = pr.html_url
+                prHTMLURL = pr.html_url;
             }
         })
     return {prExists, prURL, prNumber, prHTMLURL};
