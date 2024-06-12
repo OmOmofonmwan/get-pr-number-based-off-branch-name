@@ -18,6 +18,10 @@ outputs:
     description: "Pull Request URL"
   pr_exists:
     description: "Checks whether PR exists"
+  pr_number:
+    description: "Pull Requests Number"
+  pr_html_url:
+    description: "Pull Request HTML URL"
 
 runs:
   using: 'node20'

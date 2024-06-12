@@ -25,6 +25,8 @@ async function mainFunction(){
         const prInfo = await getPRURL(pull_request_list, BRANCH_NAME);
         core.setOutput('pr_url', prInfo.prURL);
         core.setOutput('pr_exists', prInfo.prExists);
+        core.setOutput('pr_number', prInfo.prNumber);
+        core.setOutput('pr_html_url', prInfo.prHTMLURL);
       
       
       } catch (error) {
@@ -52,13 +54,16 @@ async function getPRURL(pull_request_list, branch_name) {
     const prData = pull_request_list.data;
     let prExists = false;
     let prURL = '';
+    let prNumber = ''
     if (prData.size != 0)
         prData.forEach(pr => {
             if(pr.head.ref == branch_name){
                 console.log(pr);
                 prExists = true;
                 prURL = pr.url
+                prNumber = pr.number;
+                prHTMLURL = pr.html_url
             }
         })
-    return {prExists, prURL};
+    return {prExists, prURL, prNumber, prHTMLURL};
 }
